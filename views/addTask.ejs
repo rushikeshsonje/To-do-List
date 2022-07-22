@@ -1,0 +1,16 @@
+<%- include("header") -%>
+<%- include('navigation') -%>
+  
+  <div class="box">
+    <h3>
+      Add Task
+     </h3>
+    <form class="item" action="/addTask" method="post">
+      <input type="hidden" name="userId" value="<%= user._id %>">
+      <label class="my-1" class="label" for="addTasks">Add Task:</label>
+      <input class="my-1" type="text" name="addTasks">
+      <button class="my-3" type="submit" name="addButton">Add Task</button>
+    </form>
+  </div>
+
+  <%- include("footer") -%>

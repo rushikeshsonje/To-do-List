@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Hello</h3>
+    <script>
+        var num = prompt('Type A num')
+        var b;
+        var flag = false;
+
+        for(i = 2; i < num; i++) {
+            b = num % i;
+            if ( b == 0) {
+                flag = true;
+            }
+        }
+        if (flag == true) {
+            alert(num + ' is not a Prime Number.')
+        } else {
+            alert(num + ' is a Prime Number.')
+        }
+    </script>
+</body>
+</html>

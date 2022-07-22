@@ -1,0 +1,55 @@
+<!-- <div class="backdrop"></div> -->
+<header class="main-header wrapperes">
+    <!-- <button id="side-menu-toggle">Menu</button> -->
+    <nav class="main-header__nav">
+        <ul class="main-header__item-list">
+            <li class="logo">todoist</li>
+            <li class="main-header__item">
+                <a class="<%= path === '/' ? 'active' : '' %>" href="/">Home</a>
+            </li>
+            <% if (isAuthenticated) { %>
+                <li class="main-header__item">
+                    <a class="<%= path === '/addTask' ? 'active' : '' %>" href="/addTask">Add Task</a>
+                </li>
+                <li class="main-header__item">
+                    <a class="<%= path === '/addMeet' ? 'active' : '' %>" href="/addMeet">Add Meet</a>
+                </li>
+                <li class="main-header__item">
+                    <a class="<%= path === '/todo' ? 'active' : '' %>" href="/todo">To-Do</a>
+                </li>
+                <li class="main-header__item">
+                    <a class="<%= path === '/done' ? 'active' : '' %>" href="/done">History</a>
+                </li>
+            <% } %>
+
+            <!--  -->
+        </ul>
+        <ul class="main-header__item-list2">
+            <!--  -->
+            <% if (!isAuthenticated) { %>
+                <li class="main-header__item">
+                    <a class="<%= path === '/login' ? 'active' : '' %>" href="/login">Login</a>
+                </li>
+                <li class="main-header__item">
+                    <a class="<%= path === '/signup' ? 'active' : '' %>" href="/signup">Signup</a>
+                </li>
+                <!-- -->
+            <% } else { %>
+               
+                <div class="dropdown">
+                    <button class="btn border border-info dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                        Welcome  <%= user.name %>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                      <!-- <li><button class="dropdown-item" type="button">Action</button></li> -->
+                      <li class="main-header__item">
+                        <form action="/logout" method="post">
+                            <button type="submit">Logout</button>
+                        </form>
+                    </li>
+                    </ul>
+                  </div>
+            <% } %>
+        </ul>
+    </nav>
+</header>

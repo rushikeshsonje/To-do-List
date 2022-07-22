@@ -1,0 +1,40 @@
+<!--  -->
+
+<%- include('../header') -%>
+    <main class="">
+        <%- include('../navigation') -%>
+        <% if (errorMessage) { %>
+            <div class="user-message user-message--error"><%= errorMessage %></div>
+        <% } %>        
+        <div class="box">
+        <form class="login-form item1" action="/signup" method="POST">
+            <h4 class="centered">SignUp</h4>
+            <div class="form-control">
+                <label for="name">Name</label>
+                <input type="name" name="name" id="name">
+            </div>
+            <div class="form-control">
+                <label for="email">E-Mail</label>
+                <input type="email" name="email" id="email">
+            </div>
+            <div class="form-control">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password">
+
+               <!--  -->
+            </div>
+            <div class="form-control">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" name="confirmPassword" id="confirmPassword">
+
+               <!--  -->
+            </div>
+           <!--  -->
+            <button class="btn" type="submit">Login</button>
+            <!-- <div class="centered">
+                <a href="/reset">Reset Password</a>
+            </div> -->
+        </form>
+        </div>
+    </main>
+<%- include('../footer') -%>

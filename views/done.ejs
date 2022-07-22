@@ -1,0 +1,74 @@
+<%- include("header") -%>
+<%- include('navigation') -%>
+
+  
+  <% if ( done.length > 0) { %>
+    <div class="box">
+    <h3>Tasks History</h3>
+  
+          <!-- <form action="/delete" method="post"> -->
+            <div class="item1">
+           
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Task Name</th>
+                    <th scope="col">Task Complete Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% done.forEach((item) => { %>
+                    <% if ( !item.time ) { %>
+                      <tr>
+                        <th scope="row">*</th>
+                        <td><%= item.doneTask %></td>
+                        <td><%= item.date %></td>
+                      </tr>
+                    <% } %>
+                  <% }) %>
+                </tbody>
+              </table>
+            </div>
+            <!-- </form> -->
+      
+          </div>
+  <% } %>
+
+
+  <% if ( done.length > 0) { %>
+    <div class="box">
+    <h3>Meeting History</h3>
+
+          <!-- <form action="/delete" method="post"> -->
+            <div class="item1">
+          
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Meet Name</th>
+                    <th scope="col">Meet Date & Time</th>
+                    <!-- <th scope="col">Meet time</th> -->
+                  </tr>
+                </thead>
+                <tbody>
+                  <% done.forEach((item) => { %>
+                    <% if ( item.time ) { %>
+                      <tr>
+                        <th scope="row">*</th>
+                        <td><%= item.doneTask %></td>
+                        <td><%= item.date %></td>
+                        <!-- <td><%= item.time %></td> -->
+                      </tr>
+                    <% } %>
+                  <% }) %>
+                </tbody>
+              </table>
+            </div>
+         
+          </div>
+  <% } %>
+
+
+  <%- include("footer") -%>

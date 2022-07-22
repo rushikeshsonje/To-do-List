@@ -1,0 +1,18 @@
+<%- include("header") -%>
+<%- include('navigation') -%>
+  <div class="box1">
+    <h3>
+      Add Meeting
+    </h3>
+    <form class="item" action="/addMeet" method="post">
+      <input type="hidden" name="userId" value="<%= user._id %>">
+      <label class="my-1" for="addMeet" class="label">Add Meeting:</label>
+      <input class="my-1" type="text" name="addMeet" autocomplete="off">
+      <label class="my-1" for="time" class="label">Set Date:</label>
+      <input class="my-1" type="datetime-local" name="date" placeholder="Set A Time" autocomplete="off">
+      <button class="my-3" type="submit" name="addButton">Add Meet</button> 
+    </form>
+  </div>
+
+ 
+  <%- include("footer") -%>
